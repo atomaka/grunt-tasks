@@ -22,8 +22,7 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-trimtrailingspaces');
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  require('load-grunt-tasks')(grunt);
 
   grunt.registerTask('default', []);
   grunt.loadTasks('tasks');
