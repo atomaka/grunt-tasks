@@ -1,0 +1,12 @@
+{
+  "main": {
+    "src": [
+      "<%= cwd %>/**/*"
+    ],
+    "options": {
+      "filter": "isFile",
+      "encoding": "utf8",
+      "failIfTrimmed": false
+    }
+  }
+}

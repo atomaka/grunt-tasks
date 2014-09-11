@@ -1,26 +1,6 @@
 module.exports = function(grunt) {
-  grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
-    watch: {
-      scripts: {
-        files: ['/tmp/test/*'],
-        tasks: 'fixwhitespace',
-        options: {
-          spawn: false,
-        },
-      },
-    },
-    trimtrailingspaces: {
-      main: {
-        src: ['<%= cwd %>/**/*'],
-        options: {
-          filter: 'isFile',
-          encoding: 'utf8',
-          failIfTrimmed: false
-        }
-      }
-    }
-  });
+  var configs = require('load-grunt-configs')(grunt);
+  grunt.initConfig(configs);
 
   require('load-grunt-tasks')(grunt);
 

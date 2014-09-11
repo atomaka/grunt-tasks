@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "files": [
+      "/tmp/test/*"
+    ],
+    "tasks": "fixwhitespace",
+    "options": {
+      "spawn": false
+    }
+  }
+}
