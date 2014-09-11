@@ -1,6 +1,15 @@
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+    watch: {
+      scripts: {
+        files: ['/tmp/test/*'],
+        tasks: 'fixwhitespace',
+        options: {
+          spawn: false,
+        },
+      },
+    },
     trimtrailingspaces: {
       main: {
         src: ['/tmp/test/*'],
@@ -14,6 +23,7 @@ module.exports = function(grunt) {
   });
 
   grunt.loadNpmTasks('grunt-trimtrailingspaces');
+  grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', []);
   grunt.registerTask('fixwhitespace', ['trimtrailingspaces']);
