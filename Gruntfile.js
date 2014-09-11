@@ -12,7 +12,7 @@ module.exports = function(grunt) {
     },
     trimtrailingspaces: {
       main: {
-        src: ['/tmp/test/*'],
+        src: ['<%= cwd %>/**/*'],
         options: {
           filter: 'isFile',
           encoding: 'utf8',
@@ -25,6 +25,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-trimtrailingspaces');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
+  var cwd = grunt.option('cwd');
   grunt.registerTask('default', []);
-  grunt.registerTask('fixwhitespace', ['trimtrailingspaces']);
+  grunt.registerTask('fixwhitespace', function() {
+    grunt.config.set('cwd', cwd);
+    grunt.task.run('trimtrailingspaces');
+  });
 };

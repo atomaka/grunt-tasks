@@ -1,10 +1,14 @@
 # Global Runners
 
+## Setup
+
+Add an alias to your rc file
+
+```alias rt="grunt --gruntfile ~/grunt-test/Gruntfile.js -cwd=`pwd`"```
+
 ## Usage
 
-grunt --gruntfile ~/grunt-test/Gruntfile.js TASK
-
-alias rt="grunt --gruntfile ~/grunt-test/Gruntfile.js TASK"
+```rt TASK_NAME```
 
 ## Tasks
 
